@@ -1,0 +1,224 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e2e8f0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 20px;
+  
+}
+
+h1 {
+  padding: 20px;
+  text-align: center;
+  font-size: 60px;
+  background: linear-gradient(90deg, #818cf8, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+.calendar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.react-calendar {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: white;
+}
+
+/* Navigation (Month + arrows) */
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.react-calendar__navigation button {
+  background: transparent;
+  color: #cbd5f5;
+  font-size: 1rem;
+  border: none;
+}
+
+/* Weekdays */
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* Days */
+.react-calendar__tile {
+  padding: 12px 0;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+/* Hover */
+.react-calendar__tile:hover {
+  background: rgba(99, 102, 241, 0.2);
+}
+
+/* Selected Day */
+.react-calendar__tile--active {
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: white;
+  border-radius: 12px;
+}
+
+/* Today */
+.react-calendar__tile--now {
+  background: rgba(56, 189, 248, 0.2);
+  border-radius: 10px;
+}
+
+/* Disabled (past dates) */
+.react-calendar__tile:disabled {
+  color: #475569;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form input,
+.form select {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #1e293b;
+  color: white;
+  outline: none;
+}
+
+.form input {
+  flex: 1;
+  min-width: 200px;
+}
+
+button {
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  border: none;
+  padding: 10px 16px;
+  color: rgb(12, 12, 12);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+  color: #020617;
+}
+
+.task {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  transition: 0.3s;
+}
+
+.task:hover {
+  transform: translateY(-2px);
+}
+
+/* 📱 MOBILE ONLY */
+@media (max-width: 768px) {
+
+  /* Container */
+  .container {
+    padding: 15px;
+  }
+
+  /* Title */
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  /* Calendar */
+  .react-calendar {
+    width: 100% !important;
+    max-width: 100%;
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .react-calendar__tile {
+    padding: 10px 0;
+  }
+
+  /* Form → Stack vertically */
+  .form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .form input,
+  .form select,
+  .form button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* Task card */
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Buttons inside task */
+  .actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .actions button {
+    flex: 1;
+  }
+
+  /* Buttons touch-friendly */
+  button {
+    min-height: 44px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Remove tap highlight (mobile feel) */
+body {
+  -webkit-tap-highlight-color: transparent;
+}
