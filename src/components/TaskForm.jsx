@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { isPastDate } from "../utils/dateUtils";
-import { v4 as uuidv4 } from "uuid";
 
 function TaskForm({ addTask, selectedDate }) {
   const [title, setTitle] = useState("");
@@ -14,13 +12,8 @@ function TaskForm({ addTask, selectedDate }) {
 
     if (!title) return;
 
-    if (isPastDate(formattedDate)) {
-      alert("❌ Cannot add tasks to past dates");
-      return;
-    }
-
     const newTask = {
-      id: uuidv4(),
+      id: Date.now(), // safe for Vercel
       title,
       date: formattedDate,
       priority,

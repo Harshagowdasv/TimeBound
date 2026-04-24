@@ -18,7 +18,7 @@ function App() {
   }, [tasks]);
 
   const addTask = (task) => {
-    setTasks(prev => [...prev, task]);
+    setTasks((prev) => [...prev, task]);
   };
 
   const toggleTask = (id) => {

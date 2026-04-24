@@ -1,8 +1,8 @@
 function TaskItem({ task, toggleTask, deleteTask }) {
   const getColor = () => {
-    if (task.priority === "high") return "#ef4444";
-    if (task.priority === "medium") return "#f59e0b";
-    return "#22c55e";
+    if (task.priority === "high") return "#f87171";
+    if (task.priority === "medium") return "#facc15";
+    return "#4ade80";
   };
 
   return (
@@ -22,7 +22,7 @@ function TaskItem({ task, toggleTask, deleteTask }) {
         <p>⚡ {task.priority}</p>
       </div>
 
-      <div>
+      <div className="actions">
         <button onClick={() => toggleTask(task.id)}>
           {task.completed ? "Undo" : "Done"}
         </button>

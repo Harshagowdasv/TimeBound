@@ -7,7 +7,7 @@ function CalendarView({ selectedDate, setSelectedDate }) {
       <Calendar
         onChange={setSelectedDate}
         value={selectedDate}
-        minDate={new Date()} // 🔥 disables past dates
+        minDate={new Date()}
       />
     </div>
   );
